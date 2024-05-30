@@ -1,13 +1,7 @@
-﻿using System.Text;
+﻿using FBGroupPublisher.ViewModels;
+using FBGroupPublisher.Views;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FBGroupPublisher
 {
@@ -19,6 +13,9 @@ namespace FBGroupPublisher
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
+
+            MainView.Navigate(new MainView { DataContext = DataContext });
         }
     }
 }
